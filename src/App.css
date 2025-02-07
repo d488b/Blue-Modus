@@ -3,40 +3,112 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  color: #002f48;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.app-container {
+  width: 90%;
+  max-width: 800px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+/* Table Styles */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.data-table th,
+.data-table td {
+  padding: 12px;
+  border: 1px solid #002f48;
+  text-align: left;
+}
+
+.data-table th {
+  background: white;
+  color: #002f48;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+}
+
+.data-table th:hover {
+  background: #002f48;
+  color: white;
+}
+
+/* Sorting Indicator */
+.sorted::after {
+  display: none;
+}
+
+tbody tr:hover {
+  background: #002f48;
+  color: white;
+}
+
+/* Mobile Styles */
+@media (max-width: 600px) {
+  .data-table {
+    background-color: #002f48;
   }
-  to {
-    transform: rotate(360deg);
+
+  .data-table th,
+  .data-table td {
+    padding: 8px;
+    font-size: 14px;
   }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  .data-table th::after {
+    display: none;
   }
-}
 
-.card {
-  padding: 2em;
-}
+  .data-table td {
+    display: block;
+    text-align: center;
+    position: relative;
+  }
 
-.read-the-docs {
-  color: #888;
+  .data-table td::before {
+    font-weight: bold;
+    position: absolute;
+    left: 10px;
+    text-align: left;
+  }
+
+  .data-table tr {
+    display: block;
+    margin-bottom: 10px;
+    border: 1px solid #002f48;
+    padding: 10px;
+    border-radius: 5px;
+    background: white;
+  }
 }
